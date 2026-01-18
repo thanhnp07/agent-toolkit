@@ -1,3 +1,8 @@
+---
+name: perplexity
+description: Web search and research using Perplexity AI. Use when user says "search", "find", "look up", "ask", "research", or "what's the latest" for generic queries. NOT for library/framework docs (use Context7) or workspace questions.
+---
+
 # Perplexity Tools
 
 Use ONLY when user says "search", "find", "look up", "ask", "research", or "what's the latest" for generic queries. NOT for library/framework docs (use Context7), gt CLI (use Graphite MCP), or workspace questions (use Nx MCP).
