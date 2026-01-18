@@ -23,14 +23,19 @@ Skills follow the [Agent Skills](https://agentskills.io/) format.
 | 🔮 Meta | [plugin-forge](skills/plugin-forge/README.md) | Build Claude Code plugins & manifests |
 | 📝 Documentation | [backend-to-frontend-handoff-docs](skills/backend-to-frontend-handoff-docs/README.md) | API handoff docs for frontend |
 | 📝 Documentation | [c4-architecture](skills/c4-architecture/README.md) | C4 architecture diagrams |
+| 📝 Documentation | [crafting-effective-readmes](skills/crafting-effective-readmes/README.md) | Audience-aware README templates |
 | 📝 Documentation | [draw-io](skills/draw-io/README.md) | Create/edit draw.io diagrams |
 | 📝 Documentation | [excalidraw](skills/excalidraw/README.md) | Excalidraw diagram handling |
 | 📝 Documentation | [frontend-to-backend-requirements](skills/frontend-to-backend-requirements/README.md) | Document frontend data needs |
 | 📝 Documentation | [marp-slide](skills/marp-slide/README.md) | Professional Marp slides |
 | 📝 Documentation | [mermaid-diagrams](skills/mermaid-diagrams/README.md) | Software diagrams (flowcharts, ERDs, etc.) |
+| 📝 Documentation | [writing-clearly-and-concisely](skills/writing-clearly-and-concisely/README.md) | Clear, concise prose writing |
+| 🛠️ Development | [database-schema-designer](skills/database-schema-designer/README.md) | Design robust database schemas |
+| 🛠️ Development | [dependency-updater](skills/dependency-updater/README.md) | Smart dependency management |
 | 🛠️ Development | [reducing-entropy](skills/reducing-entropy/README.md) | Minimize codebase size |
 | 🛠️ Development | [session-handoff](skills/session-handoff/README.md) | AI agent session transfers |
 | 🎨 Design & Frontend | [design-system-starter](skills/design-system-starter/README.md) | Bootstrap design systems |
+| 🎨 Design & Frontend | [mui](skills/mui/README.md) | Material-UI v7 patterns |
 | 🎨 Design & Frontend | [openapi-to-typescript](skills/openapi-to-typescript/README.md) | OpenAPI → TypeScript types |
 | 🔧 Utilities | [domain-name-brainstormer](skills/domain-name-brainstormer/README.md) | Generate domain name ideas |
 | 🔧 Utilities | [meme-factory](skills/meme-factory/README.md) | Generate memes |
@@ -38,6 +43,8 @@ Skills follow the [Agent Skills](https://agentskills.io/) format.
 | 🎯 Planning | [game-changing-features](skills/game-changing-features/README.md) | Find 10x opportunities |
 | 🎯 Planning | [requirements-clarity](skills/requirements-clarity/README.md) | Clarify ambiguous requirements |
 | 🎯 Planning | [spec-forge](skills/spec-forge/README.md) | Detailed implementation plans |
+| 👔 Professional | [difficult-workplace-conversations](skills/difficult-workplace-conversations/README.md) | Navigate workplace conflicts |
+| 👔 Professional | [feedback-mastery](skills/feedback-mastery/README.md) | Deliver constructive feedback |
 | 👔 Professional | [professional-communication](skills/professional-communication/README.md) | Master technical communication |
 | 🧪 Testing | [qa-test-planner](skills/qa-test-planner/README.md) | Generate test plans & cases |
 | 📦 Git | [commit-work](skills/commit-work/README.md) | High-quality git commits |
