@@ -39,7 +39,6 @@ Skills follow the [Agent Skills](https://agentskills.io/) format.
 | 🎯 Planning | [game-changing-features](skills/game-changing-features/README.md) | Find 10x product opportunities |
 | 🎯 Planning | [gepetto](skills/gepetto/README.md) | Detailed implementation planning |
 | 🎯 Planning | [requirements-clarity](skills/requirements-clarity/README.md) | Clarify requirements before coding |
-| 🎯 Planning | [spec-forge](skills/spec-forge/README.md) | Multi-LLM implementation planning |
 | 👔 Professional | [difficult-workplace-conversations](skills/difficult-workplace-conversations/README.md) | Navigate difficult conversations |
 | 👔 Professional | [feedback-mastery](skills/feedback-mastery/README.md) | Deliver constructive feedback |
 | 👔 Professional | [professional-communication](skills/professional-communication/README.md) | Technical communication guide |
