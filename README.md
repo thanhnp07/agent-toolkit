@@ -19,6 +19,7 @@ Skills follow the [Agent Skills](https://agentskills.io/) format.
 | 🤖 AI Tools | [codex](skills/codex/README.md) | Advanced code analysis with GPT-5.2 |
 | 🤖 AI Tools | [gemini](skills/gemini/README.md) | Large-scale review (200k+ context) |
 | 🤖 AI Tools | [perplexity](skills/perplexity/README.md) | Web search & research |
+| 🔮 Meta | [agent-md-refactor](skills/agent-md-refactor/README.md) | Refactor bloated agent instruction files |
 | 🔮 Meta | [command-creator](skills/command-creator/README.md) | Create Claude Code slash commands |
 | 🔮 Meta | [plugin-forge](skills/plugin-forge/README.md) | Build Claude Code plugins & manifests |
 | 📝 Documentation | [backend-to-frontend-handoff-docs](skills/backend-to-frontend-handoff-docs/README.md) | API handoff docs for frontend |
