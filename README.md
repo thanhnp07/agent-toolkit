@@ -24,19 +24,20 @@ This method works with multiple AI coding agents (Claude Code, Codex, Cursor, et
 
 ### Register as Plugin Marketplace
 
-Run the following command in Claude Code:
+Run the following commands in Claude Code:
 
 ```bash
 /plugin marketplace add softaworks/agent-toolkit
+/plugin
 ```
 
 ### Install Plugins
 
 **Option 1: Via Browse UI**
 
-1. Select **Browse and install plugins**
-2. Select **agent-toolkit**
-3. Select the plugin(s) you want to install
+1. Switch to **Marketplaces** tab (use arrow keys or Tab)
+2. Select **agent-toolkit**, press Enter
+3. Browse and select the plugin(s) you want to install
 4. Select **Install now**
 
 **Option 2: Direct Install**
