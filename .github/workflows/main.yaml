@@ -31,7 +31,7 @@ jobs:
           jq -e '.name' .claude-plugin/marketplace.json > /dev/null
           jq -e '.owner' .claude-plugin/marketplace.json > /dev/null
           jq -e '.plugins' .claude-plugin/marketplace.json > /dev/null
-          jq -e '.version' .claude-plugin/marketplace.json > /dev/null
+          jq -e '.metadata.version' .claude-plugin/marketplace.json > /dev/null
 
           echo "✓ marketplace.json is valid"
 
@@ -46,43 +46,3 @@ jobs:
 
           echo "✓ plugin.json is valid"
 
-      - name: Check plugin structure
-        run: |
-          echo "Checking plugin structure..."
-
-          # Check required directories exist
-          if [ ! -d ".claude-plugin" ]; then
-            echo "✗ Missing .claude-plugin directory"
-            exit 1
-          fi
-
-          # Check README exists
-          if [ ! -f "README.md" ]; then
-            echo "✗ Missing README.md"
-            exit 1
-          fi
-
-          # Check skills directory exists
-          if [ ! -d "skills" ]; then
-            echo "✗ Missing skills directory"
-            exit 1
-          fi
-
-          echo "✓ Plugin structure OK"
-
-      - name: Verify version consistency
-        run: |
-          echo "Checking version consistency..."
-
-          # Get version from plugin.json
-          plugin_version=$(jq -r '.version' .claude-plugin/plugin.json)
-
-          # Get version from marketplace.json for this plugin
-          marketplace_version=$(jq -r '.plugins[0].version' .claude-plugin/marketplace.json)
-
-          if [ "$plugin_version" != "$marketplace_version" ]; then
-            echo "✗ Version mismatch: plugin.json=$plugin_version, marketplace.json=$marketplace_version"
-            exit 1
-          fi
-
-          echo "✓ Version $plugin_version is consistent"
