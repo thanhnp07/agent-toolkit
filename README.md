@@ -17,7 +17,7 @@ Skills follow the [Agent Skills](https://agentskills.io/) format.
 ### Quick Install (Recommended)
 
 ```bash
-npx skills add softaworks/agent-skills
+npx skills add softaworks/agent-toolkit
 ```
 
 This method works with multiple AI coding agents (Claude Code, Codex, Cursor, etc.)
@@ -27,7 +27,7 @@ This method works with multiple AI coding agents (Claude Code, Codex, Cursor, et
 Run the following command in Claude Code:
 
 ```bash
-/plugin marketplace add softaworks/agent-skills
+/plugin marketplace add softaworks/agent-toolkit
 ```
 
 ### Install Plugins
@@ -57,7 +57,7 @@ Run the following command in Claude Code:
 
 Simply tell Claude Code:
 
-> Please install Skills from github.com/softaworks/agent-skills
+> Please install Skills from github.com/softaworks/agent-toolkit
 
 ### Available Plugins
 
@@ -143,7 +143,7 @@ Add skills to project knowledge or paste SKILL.md contents into the conversation
 >
 > For full access, add the marketplace and install plugins:
 > ```bash
-> /plugin marketplace add softaworks/agent-skills
+> /plugin marketplace add softaworks/agent-toolkit
 > /plugin install codex@agent-toolkit
 > ```
 
@@ -206,4 +206,4 @@ MIT
 
 - [Agent Skills Format](https://agentskills.io/)
 - [Claude Code Documentation](https://docs.anthropic.com/claude/docs)
-- [GitHub Repository](https://github.com/softaworks/agent-skills)
+- [GitHub Repository](https://github.com/softaworks/agent-toolkit)
