@@ -83,24 +83,67 @@ Create a detailed prompt that includes:
 2. **All requirements** - Everything learned from clarifying questions
 3. **Constraints** - Technology choices, timeline, team size
 4. **Context** - Relevant codebase info, existing patterns
-5. **Plan structure** - What sections the plan should include
-6. **Output instructions** - Write to `codex-plan.md` in current directory
+5. **File references** - List of important files/docs the Codex should read for context
+6. **Plan structure** - What sections the plan should include
+7. **Output instructions** - Write to `codex-plan.md` in current directory
+
+### Including File References (IMPORTANT)
+
+Always include a section in the prompt telling Codex which files to read first for context:
+
+```
+## Files to Read for Context
+
+Before creating the plan, read these files to understand the current codebase:
+
+**Architecture & Config:**
+- `README.md` - Project overview
+- `package.json` / `pyproject.toml` - Dependencies and scripts
+- `.env.example` - Environment variables needed
+
+**Existing Code Patterns:**
+- `src/lib/db.ts` - How database connections are handled
+- `src/middleware/auth.ts` - Existing auth patterns (if any)
+- `src/types/index.ts` - Type definitions
+
+**Documentation:**
+- `docs/architecture.md` - System architecture
+- `docs/api.md` - API documentation
+
+Read these files FIRST to understand existing patterns before creating the plan.
+```
+
+Adapt this list based on what you discovered in Step 3 (Gather Context). Include:
+- Config files relevant to the task
+- Existing code that will be modified or extended
+- Documentation about architecture/patterns
+- Type definitions or schemas
+- Test files showing testing patterns used
 
 **Critical instruction to include:** Tell Codex to NOT ask any further clarifying questions - it has all the information it needs and should just write the plan and save the file.
 
-## Step 5: Execute Codex
+## Step 5: Save Prompt for Manual Execution
+
+Save the crafted prompt to `prompt_to_codex.md` for manual execution.
+
+The user will execute Codex manually using:
 
 ```bash
+# --full-auto: Executa automaticamente sem interação humana
+# --skip-git-repo-check: Pula verificação se está em um repositório git
+# -c model=gpt-5.2-codex: Usa o modelo GPT-5.2 Codex (mais avançado)
+# -c model_reasoning_effort=high: Ativa raciocínio de alto nível (deep thinking)
+# --output-last-message: Salva a última mensagem do Codex em arquivo
 codex exec --full-auto --skip-git-repo-check \
   -c model=gpt-5.2-codex \
   -c model_reasoning_effort=high \
   --output-last-message /tmp/codex-plan-result.txt \
-  "YOUR_CRAFTED_PROMPT_HERE"
+  "$(cat prompt_to_codex.md)"
 ```
 
-Then show the results:
+Or read the prompt and execute it:
 ```bash
-cat /tmp/codex-plan-result.txt
+cat prompt_to_codex.md  # Review the prompt first
 ```
 
 ## Example Full Flow
@@ -234,15 +277,43 @@ Break large tasks into smaller ones:
 Begin immediately.
 ```
 
-**Execute and return results.**
+**Save the prompt to `prompt_to_codex.md` for manual execution.**
 
 ## Important Notes
 
 - **Always ask clarifying questions first** - Don't skip this step
 - **Use AskUser tool** - This is interactive planning
-- **Always use gpt-5.2-codex with high reasoning** - No exceptions
+- **Save prompt to `prompt_to_codex.md`** - User will execute manually
 - **Tell Codex not to ask questions** - It should just execute
-- **Output file:** `codex-plan.md` in current working directory
-- **Use --full-auto**
+- **Expected output file:** `codex-plan.md` in current working directory (created by Codex)
+- **Model to use:** `gpt-5.2-codex` with `high` reasoning effort
 
-Now analyze the user's planning request above, ask your clarifying questions, and then generate and execute the Codex plan.
+## Your Task Flow
+
+1. Analyze the user's planning request above
+2. Ask clarifying questions using AskUser
+3. Gather context from codebase if needed
+4. Craft a detailed prompt for Codex
+5. **Save the prompt to `prompt_to_codex.md`** (do NOT execute)
+6. Show the user they can now execute it manually with:
+   ```bash
+   codex exec --full-auto --skip-git-repo-check \
+     -c model=gpt-5.2-codex \
+     -c model_reasoning_effort=high \
+     --output-last-message /tmp/codex-plan-result.txt \
+     "$(cat prompt_to_codex.md)"
+   ```
+7. **STOP and wait** - Ask the user to send you the final plan (`codex-plan.md`) when Codex finishes. Do NOT do anything else until the user sends the plan.
+
+## Step 7: Wait for the Plan
+
+After showing the execution command, you MUST:
+
+1. **Ask the user to send the plan** - Say something like:
+   > "Quando o Codex terminar, me envie o conteúdo do arquivo `codex-plan.md` para eu revisar."
+
+2. **Do NOT proceed** - Do not take any other action
+3. **Do NOT assume** - Do not guess what the plan contains
+4. **Just wait** - The user will paste or send the plan when ready
+
+**IMPORTANT:** Your job is DONE after step 6. Just wait for the user to send the generated plan.
